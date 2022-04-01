@@ -1,0 +1,30 @@
+<a href="" class="prd-btn">Add Product</a>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>description</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.description }}</td>
+      <td>abcd</td>
+      <td>$20</td>
+      <td>
+        <a
+          [routerLink]="['/product-admin/products/', product.id, 'modify']"
+          class="modify"
+          >Modify</a
+        >
+        <button class="btn-delete" (click)="productDel(product.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
